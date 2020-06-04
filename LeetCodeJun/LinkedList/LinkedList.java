@@ -1,5 +1,10 @@
 package LeetCodeChallenges.LeetCodeJun.LinkedList;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class LinkedList {
 
     private Node headNode;
@@ -55,6 +60,7 @@ public class LinkedList {
         }
         isInternal(temp, data);
     }
+
     private boolean isFirst(Node currentNode, int data) {
         if (currentNode.data == data) {
             headNode = headNode.next;
@@ -104,5 +110,72 @@ public class LinkedList {
         }
         Node nextNode = currentNode.next;
         currentNode.next = nextNode.next;
+    }
+
+    /** My Own :- */
+    public void mergeTwoLists(Node list1, Node list2) {
+//        if (list1 == null)
+//            return list2;
+//        if(list2 == null)
+//            return list1;
+
+        Node temp = list1;
+        while (list1.next != null) {
+            list1 = list1.next;
+        }
+        list1.next = list2;
+        sortLinkedList(temp);
+    }
+
+    public void sortLinkedList(Node currentNode) {
+        Node temp = currentNode;
+        List<Integer> list = new ArrayList<>();
+        while (currentNode != null) {
+            list.add(currentNode.data);
+            currentNode = currentNode.next;
+        }
+        Collections.sort(list);
+        while (temp != null) {
+            temp.data = list.remove(0);
+            temp = temp.next;
+        }
+    }
+
+    public Node mergeTwoList(Node list1, Node list2) {
+        if (list1 == null)
+            return list2;
+        if(list2 == null)
+            return list1;
+        Node head = null;
+        Node sortingNode = null;
+        /** Find Head :- */
+        if (list1.data <= list2.data) {
+            sortingNode = list1;
+            list1 = list1.next;
+        } else {
+            sortingNode = list2;
+            list2 = list2.next;
+        }
+        head = sortingNode;
+
+        while (list1 != null && list2 != null) {
+            if (list1.data <= list2.data) {
+                sortingNode.next = list1;
+                sortingNode = list1;
+                list1 = list1.next;
+            } else {
+                sortingNode.next = list2;
+                sortingNode = list2;
+                list2 = list2.next;
+            }
+        }
+
+        if (list1 == null) {
+            sortingNode.next = list2;
+        }
+        if (list2 == null) {
+            sortingNode.next = list1;
+        }
+        return head;
     }
 }
