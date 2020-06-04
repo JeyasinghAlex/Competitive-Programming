@@ -1,3 +1,5 @@
+package LeetCodeChallenges.LeetCodeMay;
+
 public class LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
         String s = "tmmzuxt";

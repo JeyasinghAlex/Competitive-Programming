@@ -1,4 +1,4 @@
-package Tree;
+package LeetCodeChallenges.LeetCodeMay.Tree;
 
 public class Node {
     int data;

@@ -1,4 +1,4 @@
-package OnlineStackSpan;
+package LeetCodeChallenges.LeetCodeMay.OnlineStackSpan;
 
 import java.util.HashMap;
 import java.util.Map;

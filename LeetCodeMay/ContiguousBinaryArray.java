@@ -1,3 +1,5 @@
+package LeetCodeChallenges.LeetCodeMay;
+
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,11 +1,11 @@
-package Trie;
+package LeetCodeChallenges.LeetCodeMay.Trie;
 
 public class Trie {
     /** Refferance link
      * https://leetcode.com/articles/implement-trie-prefix-tree/
      * https://github.com/gkcs/Competitive-Programming/blob/master/src/main/java/main/java/videos/Tries.java
      */
-    private final TrieNode  root;
+    private final TrieNode root;
     public Trie() {
         root = new TrieNode();
     }

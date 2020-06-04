@@ -1,3 +1,5 @@
+package LeetCodeChallenges.LeetCodeMay;
+
 public class MonotonicArray {
     /** Three answer available :*/
 

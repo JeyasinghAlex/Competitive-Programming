@@ -1,4 +1,4 @@
-package Trie;
+package LeetCodeChallenges.LeetCodeMay.Trie;
 
 public class TrieNode {
     private boolean isEnd = false;

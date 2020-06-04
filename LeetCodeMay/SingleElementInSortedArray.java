@@ -1,3 +1,5 @@
+package LeetCodeChallenges.LeetCodeMay;
+
 public class SingleElementInSortedArray {
     public static void main(String[] args) {
         System.out.println(singleNonDuplicate(new int[]{1,1,2,3,3,4,4,8,8}));

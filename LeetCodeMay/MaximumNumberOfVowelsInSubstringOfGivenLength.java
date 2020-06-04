@@ -1,3 +1,5 @@
+package LeetCodeChallenges.LeetCodeMay;
+
 public class MaximumNumberOfVowelsInSubstringOfGivenLength {
 
     public static void main(String[] args) {

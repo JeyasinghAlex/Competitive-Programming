@@ -1,4 +1,4 @@
-package LinkedList;
+package LeetCodeChallenges.LeetCodeMay.LinkedList;
 
 public class LinkedList {
     private Node head = null;

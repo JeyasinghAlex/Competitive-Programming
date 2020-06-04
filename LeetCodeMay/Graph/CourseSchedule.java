@@ -1,4 +1,4 @@
-package Graph;
+package LeetCodeChallenges.LeetCodeMay.Graph;
 
 public class CourseSchedule {
 

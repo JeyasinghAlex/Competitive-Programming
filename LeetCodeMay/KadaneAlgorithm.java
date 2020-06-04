@@ -1,4 +1,4 @@
-
+package LeetCodeChallenges.LeetCodeMay;
 
 public class KadaneAlgorithm {
     /**

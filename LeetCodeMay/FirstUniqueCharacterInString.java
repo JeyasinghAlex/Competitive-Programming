@@ -1,3 +1,5 @@
+package LeetCodeChallenges.LeetCodeMay;
+
 public class FirstUniqueCharacterInString {
     public static void main(String[] args) {
         System.out.println(firstUniqChar("leetcode"));

@@ -1,4 +1,4 @@
-package LeetCodeChallenges.LeetCodeMay.LinkedList;
+package LeetCodeChallenges.LeetCodeJun.LinkedList;
 
 public class Node {
     int data;

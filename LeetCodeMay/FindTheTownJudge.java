@@ -1,3 +1,5 @@
+package LeetCodeChallenges.LeetCodeMay;
+
 public class FindTheTownJudge {
     public static void main(String[] args) {
 

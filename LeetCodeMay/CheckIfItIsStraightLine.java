@@ -1,3 +1,5 @@
+package LeetCodeChallenges.LeetCodeMay;
+
 public class CheckIfItIsStraightLine {
     public static void main(String[] args) {
 

@@ -1,3 +1,5 @@
+package LeetCodeChallenges.LeetCodeMay;
+
 public class CheckIfaWordOccursAsPrefixOfAnyWordInSentence {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Tree;
+package LeetCodeChallenges.LeetCodeMay.Tree;
 
 import com.sun.jmx.remote.internal.ArrayQueue;
 
