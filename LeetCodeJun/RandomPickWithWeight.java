@@ -2,24 +2,25 @@ package LeetCodeChallenges.LeetCodeJun;
 
 public class RandomPickWithWeight {
 
-    int[] cumSum;
+    int[] bucket;
     public RandomPickWithWeight(int[] w) {
-        cumSum = new int[w.length];
+        bucket = new int[w.length];
         int sum = 0;
         for (int i = 0; i < w.length; ++i) {
             sum += w[i];
-            cumSum[i] = sum;
+            bucket[i] = sum;
         }
+        System.out.println(pickIndex());
     }
 
     public int pickIndex() {
-        int rand = (int)(cumSum[cumSum.length - 1] * Math.random());
+        int rand = (int)(bucket[bucket.length - 1] * Math.random());
         int ans = -1;
-        int st = 0, ed = cumSum.length - 1;
+        int st = 0, ed = bucket.length - 1;
 
         while (st <= ed) {
             int mid = st + (ed - st) / 2;
-            if (rand < cumSum[mid]) {
+            if (rand < bucket[mid]) {
                 ans = mid;
                 ed = mid - 1;
             } else {
