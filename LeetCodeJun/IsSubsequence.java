@@ -1,5 +1,8 @@
 package LeetCodeChallenges.LeetCodeJun;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class IsSubsequence {
     public static void main(String[] args) {
         String s = "axcc";
@@ -7,7 +10,7 @@ public class IsSubsequence {
         System.out.println(isSubsequenceee(s, t));
     }
 
-    private static boolean isSubsequence (String s, String t) {
+    private static boolean isSubsequence(String s, String t) {
         if (s.length() > t.length())
             return false;
 
@@ -28,7 +31,7 @@ public class IsSubsequence {
      */
     public static boolean isSubsequencee(String s, String t) {
         int index = -1;
-        for (char c : s.toCharArray()){
+        for (char c : s.toCharArray()) {
             index = t.indexOf(c, index + 1);
             if (index == -1)
                 return false;
