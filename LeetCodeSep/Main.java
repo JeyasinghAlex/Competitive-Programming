@@ -10,8 +10,8 @@ public class Main {
 //        CombinationSum_II obj = new CombinationSum_II();
 //        System.out.println(obj.combinationSum2(arr, 8));
 
-        int arr[] = {2, 2};
-        SetMismatch obj = new SetMismatch();
-        System.out.println(Arrays.toString(obj.findError(arr)));
+        int arr[] = {2, 6, 4, 8, 10, 9, 15};
+        ShortestUnsortedContinuousSubArray obj = new ShortestUnsortedContinuousSubArray();
+        System.out.println(obj.findUnsortedSubArray(arr));
     }
 }
