@@ -9,9 +9,8 @@ public class Main {
 //        System.out.println(Arrays.toString(arr));
 //        CombinationSum_II obj = new CombinationSum_II();
 //        System.out.println(obj.combinationSum2(arr, 8));
-
-        int arr[] = {2, 6, 4, 8, 10, 9, 15};
-        ShortestUnsortedContinuousSubArray obj = new ShortestUnsortedContinuousSubArray();
-        System.out.println(obj.findUnsortedSubArray(arr));
+        int arr[] = {24,69,100,99,79,78,67,36,26,19};
+        PeakIndexMountainArray obj = new PeakIndexMountainArray();
+        System.out.println(obj.peakIndexInAMountainArray(arr));
     }
 }
