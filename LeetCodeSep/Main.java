@@ -11,17 +11,14 @@ import java.util.Random;
 
 public class Main {
 
-    private static final Random RANDOM = new SecureRandom();
-
     public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 //        int[] arr = {10, 1, 2, 7, 6, 1, 5};
 //        System.out.println(Arrays.toString(arr));
 //        CombinationSum_II obj = new CombinationSum_II();
 //        System.out.println(obj.combinationSum2(arr, 8));
 
-        int[] arr = {2,3,1,-1, 21, 43, -8,3,2,4,6,7,9,2,19};
         int[] arr1 = {2,1,4,3,9,6};
-        RelativeSortArray obj = new RelativeSortArray();
-        System.out.println(Arrays.toString(obj.relativeSortArray(arr, arr1)));
+        SortArrayByParity obj = new SortArrayByParity();
+        System.out.println(Arrays.toString(obj.sortArrayParity(arr1)));
     }
 }
