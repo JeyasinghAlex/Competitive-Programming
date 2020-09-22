@@ -11,7 +11,7 @@ public class BullsAndCows {
             int g = guess.charAt(i) - '0';
             if (s == g) {
                 ++bull;
-            }else {
+            } else {
                 if (number[s] < 0)
                     ++cow;
                 if (number[g] > 0)
