@@ -1,35 +1,43 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.PriorityQueue;
 
 public class Main {
 
 
-    public int sumOddLengthSubarrays(int[] arr) {
-
-        int sum = 0;
-        for (int i = 0; i < arr.length; ++i) {
-            sum += arr[i];
-        }
-
-        for (int i = 2; i < arr.length; i+=2) {
-            sum += windowSum(arr, i);
-        }
-        return sum;
+    public static void main(String[] args) {
+        System.out.println(largeGroupPositions("abbxxxxzzy"));
     }
 
-    private int windowSum(int[] arr, int k) {
+    public static List<List<Integer>> largeGroupPositions(String s) {
 
-        int windowSum = 0;
-        for (int i = 0; i <= k; ++i) {
-            windowSum += arr[i];
-        }
+        List<List<Integer>> ans = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 
-        int sum = windowSum;
-        int index = 0;
-        for (int i = k + 1; i < arr.length; ++i) {
-            sum += arr[i] - arr[index++];
-            windowSum += sum;
+        int count = 1, index = 0;
+        for (int i = 1; i < s.length(); ++i) {
+            if (s.charAt(i) == s.charAt(i - 1)) {
+                ++count;
+            } else if (count >= 3) {
+                ans.add(new ArrayList(Arrays.asList(i - count, i - 1)));
+                count = 1;
+            } else {
+                count = 1;
+            }
         }
-        return windowSum;
+        return ans;
+    }
+
+
+    public int[] replaceElements(int[] arr) {
+        int[] res = new int[arr.length];
+        int max = Integer.MIN_VALUE;
+        for (int i = arr.length - 1; i > 0; i--){
+            max = Math.max(max, arr[i]);
+            res[i-1] = max;
+        }
+        res[arr.length - 1] = -1;
+        return res;
     }
 }
