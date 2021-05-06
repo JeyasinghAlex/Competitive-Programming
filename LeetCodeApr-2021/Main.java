@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.PriorityQueue;
 
 public class Main {
 
@@ -13,7 +12,8 @@ public class Main {
     public static List<List<Integer>> largeGroupPositions(String s) {
 
         List<List<Integer>> ans = new ArrayList<>();
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 4));
+        List<Integer> list1 = new ArrayList<>(List.of(1, 2, 3, 4));
 
         int count = 1, index = 0;
         for (int i = 1; i < s.length(); ++i) {
@@ -28,6 +28,7 @@ public class Main {
         }
         return ans;
     }
+
 
 
     public int[] replaceElements(int[] arr) {
