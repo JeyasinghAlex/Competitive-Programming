@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class Main {
 
@@ -16,7 +17,12 @@ public class Main {
 
     public int maximumPopulation(int[][] logs) {
 
+
         int[] score = new int[101];
+
+        List<List<Integer>> ans = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+
 
         for(int[] arr : logs) {
             score[arr[0] - 1950]++;

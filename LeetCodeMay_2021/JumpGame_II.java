@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class JumpGame_II {
 
     public int jump(int[] nums) {
+
         int[] jump = new int[nums.length];
         Arrays.fill(jump, Integer.MAX_VALUE);
         jump[0] = 0;
