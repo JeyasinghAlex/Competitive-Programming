@@ -6,13 +6,15 @@ import java.util.PriorityQueue;
 public class Main {
 
 
+
     public static void main(String[] args) {
 //        System.out.println(new Main().peakIndexInMountainArray(new int[]{3,4,5,1}));
 //        int a = Arrays.binarySearch(new int[]{1, 3, 5, 5,5,5,5,5, 6}, 5);
 //        System.out.println(a);
 //        System.out.println(new Main().guessNumber(10));
 //        new Main().duplicateZeros(new int[]{1,0,2,3,0,4,5,0});
-        System.out.println(new Main().maximumPopulation(new int[][]{{1950,1961},{1960,1971},{1970,1981}}));
+//        System.out.println(new Main().maximumPopulation(new int[][]{{1950,1961},{1960,1971},{1970,1981}}));
+        System.out.println(Math.sqrt(2L));
     }
 
     public int maximumPopulation(int[][] logs) {
