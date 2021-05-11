@@ -14,7 +14,42 @@ public class Main {
 //        System.out.println(new Main().guessNumber(10));
 //        new Main().duplicateZeros(new int[]{1,0,2,3,0,4,5,0});
 //        System.out.println(new Main().maximumPopulation(new int[][]{{1950,1961},{1960,1971},{1970,1981}}));
-        System.out.println(Math.sqrt(2L));
+//        System.out.println(Math.sqrt(2L));
+        System.out.println(new Main().findLengthOfShortestSubarray(new int[]{6,3,10,11,15,20,13,3,18,12}));
+
+    }
+
+    public int findLengthOfShortestSubarray(int[] arr) {
+
+        int i = 0;
+        int j = arr.length - 1;
+
+        while (i < j && arr[i] <= arr[i + 1]) {
+            ++i;
+        }
+
+        if (i == j) {
+            return 0;
+        }
+
+        while (j > 0 && arr[j] >= arr[j - 1]) {
+            --j;
+        }
+
+        int minLength = Math.min(arr.length - 1 - i, j);
+
+        int k = i;
+        i = 0;
+
+        while (i <= k && j < arr.length) {
+            if (arr[i] <= arr[j]) {
+                minLength = Math.min(minLength, j - i - 1);
+                ++i;
+            } else {
+                ++j;
+            }
+        }
+        return minLength;
     }
 
     public int maximumPopulation(int[][] logs) {
