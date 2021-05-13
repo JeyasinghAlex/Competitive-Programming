@@ -8,15 +8,37 @@ public class Main {
 
 
     public static void main(String[] args) {
-//        System.out.println(new Main().peakIndexInMountainArray(new int[]{3,4,5,1}));
-//        int a = Arrays.binarySearch(new int[]{1, 3, 5, 5,5,5,5,5, 6}, 5);
-//        System.out.println(a);
-//        System.out.println(new Main().guessNumber(10));
-//        new Main().duplicateZeros(new int[]{1,0,2,3,0,4,5,0});
-//        System.out.println(new Main().maximumPopulation(new int[][]{{1950,1961},{1960,1971},{1970,1981}}));
-//        System.out.println(Math.sqrt(2L));
-        System.out.println(new Main().findLengthOfShortestSubarray(new int[]{6,3,10,11,15,20,13,3,18,12}));
 
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.MIN_VALUE);
+
+    }
+
+    public int myAtoi(String s) {
+
+        long num = 0L;
+        boolean isMinus = false;
+        for (char ch : s.toCharArray()) {
+            if (ch == ' ') {
+                continue;
+            }
+            if (ch >= '0' && ch <= '9') {
+                num = (num * 10) + ch - '0';
+            } else if (ch == '-') {
+                isMinus = true;
+            } else {
+               break;
+            }
+
+            if (!isMinus && num >= Integer.MAX_VALUE) {
+                return Integer.MAX_VALUE;
+            }
+
+            if (isMinus && num > Integer.MAX_VALUE) {
+                return Integer.MIN_VALUE;
+            }
+        }
+        return (int) (isMinus ? -num : num);
     }
 
     public int findLengthOfShortestSubarray(int[] arr) {
