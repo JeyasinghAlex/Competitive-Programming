@@ -9,37 +9,69 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Integer.MIN_VALUE);
-
+//        System.out.println(new Main().compress(new char[]{'a','a','b','b','c','c','c'}));
+//        System.out.println(String.valueOf(5).toCharArray());
     }
 
-    public int myAtoi(String s) {
 
-        long num = 0L;
-        boolean isMinus = false;
-        for (char ch : s.toCharArray()) {
-            if (ch == ' ') {
-                continue;
+    public int compres(char[] chars) {
+        int i = 0;
+        int j = 0;
+        int index = 0;
+        while (i < chars.length) {
+            char ch = chars[i];
+            while (j < chars.length && chars[i] == chars[j]) {
+                ++j;
             }
-            if (ch >= '0' && ch <= '9') {
-                num = (num * 10) + ch - '0';
-            } else if (ch == '-') {
-                isMinus = true;
+            int freq = j - i;
+            chars[index++] = ch;
+            if (freq != 1) {
+                for (char c : String.valueOf(freq).toCharArray()) {
+                    chars[index++] = c;
+                }
+            }
+            i = j;
+        }
+        return index;
+    }
+
+    public int compress(char[] chars) {
+
+        int count = 1;
+        int index = 0;
+
+        for (int i = 1; i < chars.length; ++i) {
+            if (chars[i] != chars[i - 1]) {
+                chars[index++] = chars[i - 1];
+                if (count != 1) {
+                    for (char ch : String.valueOf(count).toCharArray())  {
+                        chars[index++] = ch;
+                    }
+                    count = 1;
+                }
             } else {
-               break;
-            }
-
-            if (!isMinus && num >= Integer.MAX_VALUE) {
-                return Integer.MAX_VALUE;
-            }
-
-            if (isMinus && num > Integer.MAX_VALUE) {
-                return Integer.MIN_VALUE;
+                ++count;
             }
         }
-        return (int) (isMinus ? -num : num);
+        chars[index++] = chars[chars.length - 1];
+        if (count != 1) {
+            for (char ch : String.valueOf(count).toCharArray()) {
+                chars[index++] = ch;
+            }
+        }
+        return index;
     }
+
+
+    private int reverse(int n) {
+        int reverse = 0;
+        while (0 < n) {
+            reverse = (reverse * 10) + n % 10;
+            n = n / 10;
+        }
+        return reverse;
+    }
+
 
     public int findLengthOfShortestSubarray(int[] arr) {
 
