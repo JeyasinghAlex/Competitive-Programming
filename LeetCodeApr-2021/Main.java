@@ -9,8 +9,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        System.out.println(new Main().compress(new char[]{'a','a','b','b','c','c','c'}));
-//        System.out.println(String.valueOf(5).toCharArray());
+        System.out.println(new Main().findTheWinner(6, 5));
+    }
+
+
+    public int findTheWinner(int n, int k) {
+        List<Integer> list = new ArrayList<>();
+        for( int i = 0; i < n; i++ ){
+            list.add(i+1);
+        }
+
+        return eliminate(list, 0, k-1);
+    }
+    private int eliminate(List<Integer> list, int start, int k){
+        if(list.size() == 1)
+            return list.get(0);
+        start = (start+k) % list.size();
+        list.remove(start);
+        return eliminate(list, start, k);
     }
 
 
