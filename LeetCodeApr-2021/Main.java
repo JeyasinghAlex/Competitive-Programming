@@ -8,10 +8,43 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-        System.out.println(new Main().findTheWinner(6, 5));
+        System.out.println(new Main().checkPalindromeFormation("pvhmupgqeltozftlmfjjde"
+               , "yjgpzbezspnnpszebzmhvp"));
     }
 
+    public boolean checkPalindromeFormation(String a, String b) {
+
+        if (isPalindrome(a) || isPalindrome(b)) {
+            return true;
+        }
+
+        int half = a.length() % 2 == 0 ? a.length() / 2 :a.length() / 2 + 1;
+        String s1 = a.substring(0, half);
+        String s2 = a.substring(half);
+        String s3 = b.substring(0, half);
+        String s4 = b.substring(half);
+
+
+        if (isPalindrome(s1 + s4) || isPalindrome(s3 + s2)) {
+            return true;
+        }
+
+        return false;
+
+    }
+
+    private boolean isPalindrome(String s) {
+        int i = 0;
+        int j = s.length() - 1;
+        while (i <= j) {
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+            }
+            ++i;
+            --j;
+        }
+        return true;
+    }
 
     public int findTheWinner(int n, int k) {
         List<Integer> list = new ArrayList<>();
