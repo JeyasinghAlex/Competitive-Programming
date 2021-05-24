@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Main {
 
@@ -9,7 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-
+        String s = "alex";
+        s.toLowerCase();
     }
 
     public boolean checkPalindromeFormation(String a, String b) {
