@@ -6,8 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String s = "alex";
-        s.toLowerCase();
     }
 
     public boolean checkPalindromeFormation(String a, String b) {
