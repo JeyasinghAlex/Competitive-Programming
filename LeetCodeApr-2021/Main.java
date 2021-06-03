@@ -7,9 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        System.out.println(Math.pow(2, 10));
-        int n = 1;
-        System.out.println(n >> 1);
+
     }
 
     public boolean checkPalindromeFormation(String a, String b) {
